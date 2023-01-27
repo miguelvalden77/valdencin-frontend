@@ -1,3 +1,4 @@
+import axios from "axios"
 
 const getAllProducts = async ()=>{
     const products = await fetch("http://localhost:5005/api/products/all")
@@ -14,4 +15,8 @@ const getOneProduct = async (producto)=>{
     return await product.json()
 }
 
-export {getAllProducts, getProductsCategory, getOneProduct}
+const createProduct = async (producto)=>{
+    return axios.post("http://localhost:5005/api/products/create", producto)
+}
+
+export {getAllProducts, getProductsCategory, getOneProduct, createProduct}

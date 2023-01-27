@@ -9,7 +9,7 @@ export default function Categoria({productos}){
         <Layout>
             <section>
                 {productos && productos.map((item)=>{
-                    return <article>
+                    return <article key={item._id}>
                         <Link href={`/productos/${item.nombre}`}><h2>{item.nombre}</h2></Link>
                         <p>{item.precio}</p>
                     </article>
