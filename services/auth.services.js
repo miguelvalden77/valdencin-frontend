@@ -1,8 +1,13 @@
+import axios from "axios"
+import service from "./config.service"
 
 const authLogin = async (info) =>{
-    const response = await fetch("http://localhost:5005/api/auth/login", info)
-    return await response.json()
+    return service.post("/login", info)
+}
+
+const verifyService = () =>{
+    return service.get("/verify")
 }
 
 
-export {authLogin}
+export {authLogin, verifyService}

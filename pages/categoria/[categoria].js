@@ -1,6 +1,8 @@
 import Layout from "@/components/layout";
+import { verifyService } from "@/services/auth.services";
 import { getProductsCategory } from "@/services/product.services";
 import Link from "next/link";
+import { useEffect } from "react";
 
 
 export default function Categoria({productos}){

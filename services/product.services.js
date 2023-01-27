@@ -19,4 +19,8 @@ const createProduct = async (producto)=>{
     return axios.post("http://localhost:5005/api/products/create", producto)
 }
 
-export {getAllProducts, getProductsCategory, getOneProduct, createProduct}
+const updateProduct = async (productId, info) =>{
+    return axios.patch(`http://localhost:5005/api/products/${productId}/update`, info)
+}
+
+export {getAllProducts, getProductsCategory, getOneProduct, createProduct, updateProduct}

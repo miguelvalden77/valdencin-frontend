@@ -1,3 +1,4 @@
+import { useAppWrapper } from "@/components/appWrapper";
 import Layout from "@/components/layout";
 import { createProduct } from "@/services/product.services";
 import { useRouter } from "next/router";
@@ -9,6 +10,11 @@ export default function crearProducto(){
     const router = useRouter()
 
     const [data, setData] = useState({nombre: "", precio: "", categoria: "Jamones", descripcion: "", imagen: ""})
+    const context = useAppWrapper()
+
+    useEffect(()=>{
+        context.authenticateUser()
+    }, [])
 
     const handleChange = (evt)=> setData({...data, [evt.target.name]: evt.target.value})
     const handleSubmit = async (evt)=> {
@@ -16,8 +22,7 @@ export default function crearProducto(){
         evt.preventDefault()
 
         try{
-            const response = await createProduct(data)
-            console.log(response.data)
+            await createProduct(data)
             router.push("/")
         }
         catch(err){

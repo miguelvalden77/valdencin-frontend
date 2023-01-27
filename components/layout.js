@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Footer from "./footer";
 import Maps from "./maps";
 import Navbar from "./navbar";
 
@@ -18,6 +19,7 @@ export default function Layout({children, title}){
         {children}
 
         <Maps/>
+        <Footer/>
        </> 
     )
 

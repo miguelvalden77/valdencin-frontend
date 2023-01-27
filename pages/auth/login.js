@@ -1,18 +1,22 @@
 import Layout from "@/components/layout";
 import { authLogin } from "@/services/auth.services";
+import { useRouter } from "next/router";
 import { useState } from "react";
 
 
 export default function Login(){
 
-    const [data, setData] = useState({usuario: "", email: "", contraseña: ""})
+    const router = useRouter()
+    const [data, setData] = useState({username: "", email: "", password: ""})
 
     const handleChange = (evt) => setData({...data, [evt.target.name]: evt.target.value})
     const handleSubmit = async (evt) => {
         evt.preventDefault()
         try{
-            const res = await authLogin(data)
-            console.log(res)
+            const response = await authLogin(data)
+            const {authToken} = response.data
+            localStorage.setItem("authToken", authToken)
+            router.push("/")
         }
         catch(err){
             console.log(err)
@@ -27,7 +31,7 @@ export default function Login(){
                     <div>
                         <div>
                             <p>Usuario</p>
-                            <input value={data.usuario} onChange={handleChange} name="usuario" type={"text"}/>
+                            <input value={data.usuario} onChange={handleChange} name="username" type={"text"}/>
                         </div>
                         <div>
                             <p>Email</p>
@@ -35,9 +39,9 @@ export default function Login(){
                         </div>
                         <div>
                             <p>Contraseña</p>
-                            <input value={data.contraseña} onChange={handleChange} name="contraseña" type={"password"}/>
+                            <input value={data.contraseña} onChange={handleChange} name="password" type={"password"}/>
                         </div>
-                        <button onSubmit={handleSubmit}>Entrar</button>
+                        <button onClick={handleSubmit}>Entrar</button>
                     </div>
                 </form>
             </section>
