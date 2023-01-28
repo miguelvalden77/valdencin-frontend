@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useAppWrapper } from "./appWrapper";
+import styles from "../styles/Navbar.module.css"
 
 
 export default function Navbar(){
@@ -25,10 +26,12 @@ export default function Navbar(){
         )
     }
     return(
-        <nav>
+        <nav className={styles.nav}>
             <Link href={"/"}>Home</Link>
-            <Link href={"/productos"}>Productos</Link>
-            <Link href={"/auth/login"}>Login</Link>
+            <div className={styles.nav_sub}>
+                <Link href={"/productos"}>Productos</Link>
+                <Link href={"#maps"}>Encuéntranos</Link>
+            </div>
         </nav>
     )
 
