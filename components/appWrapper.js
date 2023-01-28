@@ -6,7 +6,7 @@ const { createContext, useState, useContext } = require("react");
 
 const appContext = createContext({})
 
-export default function appWrapper({children}){
+export default function AppWrapper({children}){
 
     const router = useRouter()
     const [isOwner, setIsOwner] = useState(false)

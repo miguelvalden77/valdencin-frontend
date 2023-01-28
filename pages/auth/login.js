@@ -1,3 +1,4 @@
+import { useAppWrapper } from "@/components/appWrapper";
 import Layout from "@/components/layout";
 import { authLogin } from "@/services/auth.services";
 import { useRouter } from "next/router";
@@ -6,6 +7,7 @@ import { useState } from "react";
 
 export default function Login(){
 
+    const context = useAppWrapper()
     const router = useRouter()
     const [data, setData] = useState({username: "", email: "", password: ""})
 
@@ -16,6 +18,7 @@ export default function Login(){
             const response = await authLogin(data)
             const {authToken} = response.data
             localStorage.setItem("authToken", authToken)
+            context.authenticateUser()
             router.push("/")
         }
         catch(err){

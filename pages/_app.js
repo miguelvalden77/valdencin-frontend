@@ -1,10 +1,10 @@
 import '@/styles/globals.css'
-import appWrapper from '@/components/appWrapper'
+import AppWrapper from '@/components/appWrapper'
 
 export default function App({ Component, pageProps }) {
   return(
-    <appWrapper>
+    <AppWrapper>
       <Component {...pageProps} />
-    </appWrapper>
+    </AppWrapper>
   )
 }

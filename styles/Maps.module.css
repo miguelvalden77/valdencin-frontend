@@ -1,0 +1,19 @@
+.container{
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 1rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    flex-direction: column;
+    background-color: var(--background-color);
+    gap: 1rem;
+}
+
+.map{
+    width: 100%;
+    max-width: 750px;
+    height: 300px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

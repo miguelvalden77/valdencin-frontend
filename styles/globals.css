@@ -1,0 +1,13 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+:root{
+    --background-color: rgba(227, 225, 223, 60%);
+}

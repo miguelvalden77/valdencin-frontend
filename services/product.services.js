@@ -1,4 +1,4 @@
-import axios from "axios"
+import service from "./config.service"
 
 const getAllProducts = async ()=>{
     const products = await fetch("http://localhost:5005/api/products/all")
@@ -16,11 +16,15 @@ const getOneProduct = async (producto)=>{
 }
 
 const createProduct = async (producto)=>{
-    return axios.post("http://localhost:5005/api/products/create", producto)
+    return service.post("http://localhost:5005/api/products/create", producto)
 }
 
 const updateProduct = async (productId, info) =>{
-    return axios.patch(`http://localhost:5005/api/products/${productId}/update`, info)
+    return service.patch(`http://localhost:5005/api/products/${productId}/update`, info)
 }
 
-export {getAllProducts, getProductsCategory, getOneProduct, createProduct, updateProduct}
+const deleteProduct = (id)=>{
+    return service.delete(`http://localhost:5005/api/products/${id}/delete`)
+}
+
+export {getAllProducts, getProductsCategory, getOneProduct, createProduct, updateProduct, deleteProduct}

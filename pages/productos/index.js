@@ -5,20 +5,20 @@ import paleta from "../../public/images/paletas.jpg"
 import embutido from "../../public/images/embutidos.png"
 import queso from "../../public/images/quesos.png"
 import Image from "next/image";
-
+import styles from "../../styles/AllCategories.module.css"
 
 export default function Productos({productos}){
 
     return(
         <Layout>
-            <section>
+            <section className={styles.all_categories}>
                 {productos.length > 0 && productos.map((item)=>{
-                    return <article key={item.nombre} style={{width: "300px", position: "relative", height: "180px"}}>
-                        <Link href={`/categoria/${item.nombre}`}>
-                            <h2>{item.nombre}</h2>
-                            <Image src={item.imagen} placeholder={"blur"} fill alt={item.nombre}/>
+                return <Link key={item.nombre} href={`/categoria/${item.nombre}`}>
+                            <article className={styles.category_card} style={{position: "relative"}}>
+                                <Image className={styles.category_img} src={item.imagen} placeholder={"blur"} fill alt={item.nombre}/>
+                                <h2 className={styles.category_title}>{item.nombre}</h2>
+                            </article>
                         </Link>
-                    </article>
                 })}
             </section>
         </Layout>
