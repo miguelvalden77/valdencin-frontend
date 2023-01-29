@@ -1,0 +1,117 @@
+.one_product_card{
+    display: flex;
+    height: 270px;
+    width: 560px;
+    transition: 0.3s linear box-shadow;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.product_description{
+    font-size: 0.75rem;
+}
+
+.product_info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 2rem;
+    justify-content: space-between;
+    flex: 1;
+}
+@media screen and (max-width: 800px) {
+    .one_product_card{
+        flex-direction: column;
+        max-width: 270px;
+        margin-bottom: 2rem;
+        height: auto;
+    }
+
+    .product_info{
+        margin-left: 0;
+        gap: 1.4rem;
+        padding-top: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.main_product{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3.5rem;
+    padding-top: 2rem;
+    background-color: rgba(227, 225, 223, 60%);
+    min-height: 85vh;
+}
+
+.img_product{
+    width: 100%;
+    height: 100%;
+}
+
+.img-product-container{
+    flex: 1;
+}
+
+.product_info_title{
+    font-size: 1rem;
+}
+
+.stock{
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: rgba(52, 161, 52, 0.6);
+}
+
+.stock_circle{
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: rgba(52, 161, 52, 0.6);
+    border-radius: 50%;
+}
+
+.one_product_button{
+    cursor: pointer;
+    padding: 0.4rem 0.8rem;
+    border-radius: none;
+    background-color: rgb(66, 66, 66);
+    color: whitesmoke;
+    border: none;
+    font-weight: 400;
+}
+
+.borrar_button{
+    background-color: rgb(159, 6, 6);
+    border: none;
+    color: whitesmoke;
+    padding: 0.5rem 0.75rem;
+}
+
+.actualizar_button{
+    background-color: rgb(13, 13, 126);
+    color: whitesmoke;
+    padding: 0.5rem 0.75rem;
+    border: none;
+}
+
+.precio_text{
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.checkbox{
+    width: 15px;
+    height: 15px;
+    border: 2px solid black;
+    cursor: pointer;
+    position: relative;
+}
+
+.buttons_opt{
+    display: flex;
+    gap: 0.75rem;
+}

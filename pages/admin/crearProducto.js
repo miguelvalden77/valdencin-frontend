@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { upload } from "@/services/upload.services";
+import styles from "../../styles/Login.module.css";
 
 
 export default function crearProducto(){
@@ -53,40 +54,40 @@ export default function crearProducto(){
 
     return(
         <Layout>
-            <section>
-                <form>
-                    <h2>Crear producto</h2>
-                    <div>
-                        <div>
-                            <p>Nombre</p>
-                            <input name="nombre" value={data.nombre} onChange={handleChange}/>
+            <section className={styles.main_login}>
+                <form className={styles.login_form}>
+                    <h2 className={styles.login_title}>Crear producto</h2>
+                    
+                        <div style={{position: "relative"}}>
+                            <p className={styles.label}>Nombre</p>
+                            <input className={styles.input_login} name="nombre" value={data.nombre} onChange={handleChange}/>
                         </div>
-                        <div>
-                            <p>Precio</p>
-                            <input name="precio" value={data.precio} onChange={handleChange}/>
+                        <div style={{position: "relative"}}>
+                            <p className={styles.label}>Precio</p>
+                            <input className={styles.input_login} name="precio" value={data.precio} onChange={handleChange}/>
                         </div>
-                        <div>
-                            <p>Categoria</p>
-                            <select defaultValue={data.categoria} name="categoria"  onChange={handleChange}>
+                        <div style={{position: "relative"}}>
+                            <p className={styles.label}>Categoria</p>
+                            <select className={styles.input_login} defaultValue={data.categoria} name="categoria"  onChange={handleChange}>
                                 <option value={"Jamones"}>Jamones</option>
                                 <option value={"Paletas"}>Paletas</option>
                                 <option value={"Embutidos"}>Embutidos</option>
                                 <option value={"Quesos"}>Quesos</option>
                             </select>
                         </div>
-                        <div>
-                            <p>Descripcion</p>
-                            <input name="descripcion" value={data.descripcion} onChange={handleChange}/>
+                        <div style={{position: "relative"}}>
+                            <p className={styles.label}>Descripcion</p>
+                            <input className={styles.input_login} name="descripcion" value={data.descripcion} onChange={handleChange}/>
                         </div>
-                        <div>
-                            <p>Imagen</p>
-                            <input type={"file"} name="imagen" value={data.imagen} onChange={handleImgUpload}/>
+                        <div style={{position: "relative"}}>
+                            <p className={styles.label}>Imagen</p>
+                            <input className={styles.input_login} type={"file"} name="imagen" value={data.imagen} onChange={handleImgUpload}/>
                         </div>
                         <div>
                             {urlImage && <Image alt={data.descripcion} src={urlImage} width={140} height={300}/>}
                         </div>
-                        <button onClick={handleSubmit}>Crear</button>
-                    </div>
+                        <button className={styles.login_button} onClick={handleSubmit}>Crear</button>
+                    
                 </form>
             </section>
         </Layout>

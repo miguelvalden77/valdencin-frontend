@@ -3,6 +3,8 @@ import Layout from "@/components/layout";
 import { deleteProduct, getAllProducts, getOneProduct } from "@/services/product.services";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import styles from "../../styles/Product.module.css"
+import Image from "next/image";
 
 
 export default function OneProduct({producto}){
@@ -22,11 +24,17 @@ export default function OneProduct({producto}){
 
     return(
         <Layout>
-            <section>
+            <section className={styles.main_product}>
                 {
                 producto && 
-                <article>
-                    <h2>{producto.nombre}</h2>
+                <article className={styles.one_product_card}>
+                    <div className={styles.img_product_container}>
+                        <Image src={producto.imagen} fill alt="foto"/>
+                    </div>
+                    <div className={styles.product_info}>
+                        <h2>{producto.nombre}</h2>
+                            
+                    </div>
                     <p>{producto.precio}</p>
                     {context.isOwner && 
                     <section>
