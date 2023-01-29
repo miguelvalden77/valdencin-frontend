@@ -1,0 +1,13 @@
+.img-update{
+    width: 100%;
+}
+
+.input-img-update{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.label-img{
+    left: 45px;
+}

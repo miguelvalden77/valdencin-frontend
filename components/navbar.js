@@ -17,11 +17,13 @@ export default function Navbar(){
 
     if(context.isOwner === true){
         return(
-            <nav>
+            <nav className={styles.nav}>
                 <Link href={"/"}>Home</Link>
-                <Link href={"/productos"}>Productos</Link>
-                <Link href={"/admin/crearProducto"}>Crear</Link>
-                <button onClick={handleLogout}>Salir</button>
+                <div className={styles.nav_sub}>
+                    <Link href={"/productos"}>Productos</Link>
+                    <Link href={"/admin/crearProducto"}>Crear</Link>
+                    <button className={styles.logout} onClick={handleLogout}>Salir</button>
+                </div>
             </nav>
         )
     }

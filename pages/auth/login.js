@@ -3,6 +3,7 @@ import Layout from "@/components/layout";
 import { authLogin } from "@/services/auth.services";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import styles from "../../styles/Login.module.css"
 
 
 export default function Login(){
@@ -28,24 +29,24 @@ export default function Login(){
 
     return(
         <Layout>
-            <section>
-                <form>
-                    <h2>Login</h2>
-                    <div>
-                        <div>
-                            <p>Usuario</p>
-                            <input value={data.usuario} onChange={handleChange} name="username" type={"text"}/>
+            <section className={styles.main_login}>
+                <form className={styles.login_form}>
+                    <h2 className={styles.login_title}>Login</h2>
+                    
+                        <div className={styles.input_container}>
+                            <p className={styles.label}>Usuario</p>
+                            <input className={styles.input_login} value={data.usuario} onChange={handleChange} name="username" type={"text"}/>
                         </div>
-                        <div>
-                            <p>Email</p>
-                            <input value={data.email} onChange={handleChange} name="email" type={"text"}/>
+                        <div className={styles.input_container}>
+                            <p className={styles.label}>Email</p>
+                            <input className={styles.input_login} value={data.email} onChange={handleChange} name="email" type={"text"}/>
                         </div>
-                        <div>
-                            <p>Contraseña</p>
-                            <input value={data.contraseña} onChange={handleChange} name="password" type={"password"}/>
+                        <div className={styles.input_container}>
+                            <p className={styles.label}>Contraseña</p>
+                            <input className={styles.input_login} value={data.contraseña} onChange={handleChange} name="password" type={"password"}/>
                         </div>
-                        <button onClick={handleSubmit}>Entrar</button>
-                    </div>
+                        <button className={styles.login_button} onClick={handleSubmit}>Entrar</button>
+                    
                 </form>
             </section>
         </Layout>

@@ -17,6 +17,7 @@ export default function crearProducto(){
 
     useEffect(()=>{
         context.authenticateUser()
+        context.verificar()
     }, [])
 
     const handleChange = (evt)=> setData({...data, [evt.target.name]: evt.target.value})

@@ -23,7 +23,13 @@ export default function AppWrapper({children}){
         }
     }
 
-    const passedContext = {authenticateUser, isOwner}
+    const verificar = () =>{
+        if(!isOwner){
+            router.push("/")
+        }
+    }
+
+    const passedContext = {authenticateUser, isOwner, verificar}
 
     return <appContext.Provider value={passedContext}>
         {children}

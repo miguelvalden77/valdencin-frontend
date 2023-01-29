@@ -2,6 +2,7 @@ import Head from "next/head";
 import Footer from "./footer";
 import Maps from "./maps";
 import Navbar from "./navbar";
+import Whatsapp from "./whatsapp";
 
 
 export default function Layout({children, title}){
@@ -20,6 +21,7 @@ export default function Layout({children, title}){
 
         <Maps/>
         <Footer/>
+        <Whatsapp/>
        </div> 
     )
 

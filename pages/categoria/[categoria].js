@@ -4,18 +4,23 @@ import { getProductsCategory } from "@/services/product.services";
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect } from "react";
+import styles from "../../styles/Category.module.css"
 
 
 export default function Categoria({productos}){
 
     return(
         <Layout>
-            <section>
+            <section className={styles.category_section}>
                 {productos && productos.map((item)=>{
-                    return <article key={item._id}>
-                        <Link href={`/productos/${item.nombre}`}><h2>{item.nombre}</h2></Link>
-                        <p>{item.precio}</p>
-                        {item.imagen && <Image src={item.imagen} width={200} height={150}/>}
+                    return <article className={styles.product_card} key={item._id}>
+                        <div className={styles.product_img_container}>
+                            <Image src={item.imagen} fill/>
+                        </div>
+                        <div className={styles.info_container}>  
+                            <Link href={`/productos/${item.nombre}`}><h2>{item.nombre}</h2></Link>
+                            <p>{item.precio} €</p>
+                        </div>
                     </article>
                 })}
             </section>

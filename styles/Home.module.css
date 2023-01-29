@@ -1,8 +1,23 @@
 .main{
     min-height: 90vh;
     background-image: url("../public/images/fondo.jpg");
-    background-position: center -200px;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     box-shadow: 2px 5px 6px;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 3rem;
+    justify-content: center;
+}
+
+.title{
+    text-align: center;
+    color: rgb(202, 201, 201);
+    font-size: 1.7rem;
+    line-height: 4rem;
+    max-width: 380px;
+    backdrop-filter: blur(3px);
+    border-radius: 5px;
+    background-image: linear-gradient(to bottom,green 0 33%,white 33% 66%,black 66% 100%);
 }
